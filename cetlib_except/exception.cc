@@ -4,7 +4,7 @@
 //
 // ======================================================================
 
-#include "cetlib/exception.h"
+#include "cetlib_except/exception.h"
 #include <cctype>
 
 using cet::exception;

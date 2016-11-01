@@ -1,5 +1,5 @@
-#ifndef cetlib_exception_h
-#define cetlib_exception_h
+#ifndef cetlib_except_exception_h
+#define cetlib_except_exception_h
 
 // ======================================================================
 //
@@ -179,4 +179,4 @@ namespace cet {
 // Local variables
 // mode: c++
 // End:
-#endif /* cetlib_exception_h */
+#endif /* cetlib_except_exception_h */

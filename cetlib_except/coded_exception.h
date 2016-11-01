@@ -1,5 +1,5 @@
-#ifndef cetlib_coded_exception_h
-#define cetlib_coded_exception_h
+#ifndef cetlib_except_coded_exception_h
+#define cetlib_except_coded_exception_h
 
 // ======================================================================
 //
@@ -7,7 +7,7 @@
 //
 // ======================================================================
 
-#include "cetlib/exception.h"
+#include "cetlib_except/exception.h"
 #include <string>
 
 namespace cet {
@@ -82,7 +82,7 @@ cet::coded_exception<Code,translate>::codeToString(Code code)
 
 // ======================================================================
 
-#endif /* cetlib_coded_exception_h */
+#endif /* cetlib_except_coded_exception_h */
 
 // Local variables:
 // mode: c++

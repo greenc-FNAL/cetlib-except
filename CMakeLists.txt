@@ -21,7 +21,7 @@ cmake_minimum_required(VERSION 2.8)  # use cmake 2.8 or later
 # ----------------------------------------------------------------------
 # Describe product:
 
-project(cetlib)
+project(cetlib_except)
 
 # cetbuildtools contains our cmake modules
 find_package(cetbuildtools REQUIRED)
@@ -42,17 +42,11 @@ cet_report_compiler_flags()
 
 
 find_ups_product (cetbuildtools v4_14_01)
-find_ups_boost(v1_50_0)
-find_ups_product(sqlite)
-
-# SQLite
-cet_find_library(SQLITE3 NAMES sqlite3_ups PATHS ENV SQLITE_LIB NO_DEFAULT_PATH)
 
 # ----------------------------------------------------------------------
 # Describe source tree layout:
 
 add_subdirectory( ${PROJECT_NAME} )  # source code
-add_subdirectory( perllib )          # Modular plugin skeleton generator
 add_subdirectory( ups )              # ups files
 
 # ----------------------------------------------------------------------
