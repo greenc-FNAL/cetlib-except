@@ -8,18 +8,22 @@ fcldir  -
 product	version
 gcc		v4_9_3a		e10
 gcc		v6_2_0		e12
-cetbuildtools	v5_05_00	-	only_for_build
+apple_clang	v1_00_00	e13
+cetbuildtools	v5_04_08	-	only_for_build
 end_product_list
 
 
 # Matrix of qualifiers versus dependent products
-qualifier	gcc	compiler	notes
-e12:debug	-nq-	gcc
-e12:opt		-nq-	gcc
-e12:prof	-nq-	gcc
-e10:debug	-nq-	gcc
-e10:opt		-nq-	gcc
-e10:prof	-nq-	gcc
+qualifier	gcc	apple_clang	compiler	notes
+e13:debug	-	-nq-		clang
+e13:opt		-	-nq-            clang
+e13:prof	-	-nq-            clang
+e12:debug	-nq-	-		gcc
+e12:opt		-nq-	-               gcc
+e12:prof	-nq-	-               gcc
+e10:debug	-nq-	-               gcc
+e10:opt		-nq-	-               gcc
+e10:prof	-nq-	-               gcc
 end_qualifier_list
 
 # Local Variables:
