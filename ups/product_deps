@@ -8,7 +8,7 @@ fcldir  -
 product	version
 gcc		v4_9_3a		e10
 gcc		v6_2_0		e12
-cetbuildtools	v5_06_00	-	only_for_build
+cetbuildtools	v5_06_01	-	only_for_build
 end_product_list
 
 
