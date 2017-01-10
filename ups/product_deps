@@ -1,5 +1,5 @@
 parent cetlib_except v1_00_00
-defaultqual e12
+defaultqual e14
 #
 libdir	fq_dir lib
 fcldir  -
@@ -8,12 +8,16 @@ fcldir  -
 product	version
 gcc		v4_9_3a		e10
 gcc		v6_2_0		e12
-cetbuildtools	v5_06_01	-	only_for_build
+gcc		v6_3_0		e14
+cetbuildtools	v5_06_03	-	only_for_build
 end_product_list
 
 
 # Matrix of qualifiers versus dependent products
 qualifier	gcc	compiler	notes
+e14:debug	-nq-	gcc
+e14:opt		-nq-	gcc
+e14:prof	-nq-	gcc
 e12:debug	-nq-	gcc
 e12:opt		-nq-	gcc
 e12:prof	-nq-	gcc
