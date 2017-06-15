@@ -16,15 +16,20 @@
 # ----------------------------------------------------------------------
 # Describe build tool requirements:
 
-cmake_minimum_required(VERSION 2.8)  # use cmake 2.8 or later
+cmake_minimum_required(VERSION 3.0)  
 
 # ----------------------------------------------------------------------
 # Describe product:
 
-project(cetlib_except)
+project(cetlib_except VERSION 1.01.02)
 
-# cetbuildtools contains our cmake modules
-find_package(cetbuildtools REQUIRED)
+# cetmodules contains our cmake modules
+find_package(cetmodules REQUIRED)
+
+# module path
+list(APPEND CMAKE_MODULE_PATH ${cetmodules_MODULE_PATH})
+
+message(STATUS "CMAKE_MODULE_PATH: ${CMAKE_MODULE_PATH}")
 
 include(CetCMakeEnv)
 cet_cmake_env()
@@ -41,7 +46,7 @@ cet_report_compiler_flags()
 # Describe build prerequisites:
 
 
-find_ups_product (cetbuildtools v4_14_01)
+find_ups_product (cetmodules)
 
 # ----------------------------------------------------------------------
 # Describe source tree layout:
@@ -52,7 +57,7 @@ add_subdirectory( ups )              # ups files
 # ----------------------------------------------------------------------
 # Packaging utility
 
-include(UseCPack)
+##include(UseCPack)
 
 #
 # ======================================================================

@@ -7,9 +7,8 @@ fcldir  -
 # define product/version pairs
 product	version
 gcc		v4_9_3a		e10
-gcc		v6_2_0		e12
 gcc		v6_3_0		e14
-cetbuildtools	v5_08_02	-	only_for_build
+cetmodules         v0_01_00	-	only_for_build
 end_product_list
 
 
@@ -18,9 +17,6 @@ qualifier	gcc	compiler	notes
 e14:debug	-nq-	gcc
 e14:opt		-nq-	gcc
 e14:prof	-nq-	gcc
-e12:debug	-nq-	gcc
-e12:opt		-nq-	gcc
-e12:prof	-nq-	gcc
 e10:debug	-nq-	gcc
 e10:opt		-nq-	gcc
 e10:prof	-nq-	gcc
