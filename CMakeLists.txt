@@ -26,11 +26,6 @@ project(cetlib_except VERSION 1.01.02)
 # cetmodules contains our cmake modules
 find_package(cetmodules REQUIRED)
 
-# module path
-list(APPEND CMAKE_MODULE_PATH ${cetmodules_MODULE_PATH})
-
-message(STATUS "CMAKE_MODULE_PATH: ${CMAKE_MODULE_PATH}")
-
 include(CetCMakeEnv)
 cet_cmake_env()
 
