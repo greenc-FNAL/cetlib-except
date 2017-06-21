@@ -1,12 +1,8 @@
-
-
 @PACKAGE_INIT@
 
-
-set_and_check(@PROJECT_NAME@_LIBDIR "${PACKAGE_PREFIX_DIR}/@INSTALLED_DIR_ADJUSTMENT@lib")
-set_and_check(@PROJECT_NAME@_INCDIR "${PACKAGE_PREFIX_DIR}/@INSTALLED_DIR_ADJUSTMENT@include")
-find_library(CETLIB_EXCEPT NAMES cetlib_except PATHS ${@PROJECT_NAME@_LIBDIR} NO_DEFAULT_PATH)
+set_and_check(@PROJECT_NAME@_LIBDIR "${PACKAGE_PREFIX_DIR}/lib")
+set_and_check(@PROJECT_NAME@_INCDIR "${PACKAGE_PREFIX_DIR}/include")
+@CONFIG_FIND_LIBRARY_COMMANDS@
 include_directories( ${@PROJECT_NAME@_INCDIR} )
 
-check_required_components(@product@)
-
+check_required_components(@PROJECT_NAME@)
