@@ -7,7 +7,7 @@ fcldir  -
 # define product/version pairs
 product	version
 gcc		v6_3_0		e14
-cetbuildtools	v5_13_00	-	only_for_build
+cetbuildtools	v5_13_01	-	only_for_build
 end_product_list
 
 
