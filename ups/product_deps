@@ -1,4 +1,4 @@
-parent cetlib_except v1_01_03
+parent cetlib_except v1_01_04
 defaultqual e14
 #
 libdir	fq_dir lib
@@ -7,7 +7,8 @@ fcldir  -
 # define product/version pairs
 product	version
 gcc		v6_3_0		e14
-cetbuildtools	v5_13_01	-	only_for_build
+gcc		v6_4_0		e15
+cetbuildtools	v5_14_03	-	only_for_build
 end_product_list
 
 
@@ -16,6 +17,9 @@ qualifier	gcc	compiler	notes
 e14:debug	-nq-	gcc
 e14:opt		-nq-	gcc
 e14:prof	-nq-	gcc
+e15:debug	-nq-	gcc
+e15:opt		-nq-	gcc
+e15:prof	-nq-	gcc
 end_qualifier_list
 
 # Local Variables:
