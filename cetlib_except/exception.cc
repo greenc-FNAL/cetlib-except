@@ -9,7 +9,7 @@
 
 using cet::exception;
 
-using Category     = exception::Category;
+using Category = exception::Category;
 using CategoryList = exception::CategoryList;
 
 // ======================================================================
@@ -17,19 +17,22 @@ using CategoryList = exception::CategoryList;
 
 namespace {
 
-  bool ends_with_whitespace(std::string const& s)
+  bool
+  ends_with_whitespace(std::string const& s)
   {
-    return s.empty() || std::isspace(*(s.end()-1));
+    return s.empty() || std::isspace(*(s.end() - 1));
   }
 
-  bool ends_with_newline(std::string const& s)
+  bool
+  ends_with_newline(std::string const& s)
   {
-    return s.empty() || *(s.end()-1) == '\n';
+    return s.empty() || *(s.end() - 1) == '\n';
   }
 
-  constexpr char const* indent {"  "};
+  constexpr char const* indent{"  "};
 
-  std::string indent_string(std::string const& s)
+  std::string
+  indent_string(std::string const& s)
   {
     std::string result{indent};
     result.append(s);
@@ -48,25 +51,22 @@ namespace {
 // ======================================================================
 // c'tors, d'tors:
 
-exception::exception(Category const& c)
-  : category_{{c}}
-{}
+exception::exception(Category const& c) : category_{{c}} {}
 
-exception::exception(Category    const& c,
-                     std::string const& m)
-  : category_{{c}}
+exception::exception(Category const& c, std::string const& m) : category_{{c}}
 {
   ost_ << m;
-  if(! ends_with_whitespace(m))
+  if (!ends_with_whitespace(m))
     ost_ << ' ';
 }
 
-exception::exception(Category    const& c,
+exception::exception(Category const& c,
                      std::string const& m,
-                     exception   const& e)
+                     exception const& e)
   : category_{{c}}
 {
-  if (!m.empty()) ost_ << m << '\n';
+  if (!m.empty())
+    ost_ << m << '\n';
   category_.insert(category_.end(), e.history().begin(), e.history().end());
   append(e);
 }
@@ -75,15 +75,13 @@ exception::exception(Category    const& c,
 // copy c'tor:
 
 exception::exception(exception const& other)
-  : category_{other.category_}
-  , what_{other.what_}
+  : category_{other.category_}, what_{other.what_}
 {
   ost_ << other.ost_.str();
 }
 
 exception::exception(exception&& other)
-  : category_{std::move(other.category_)}
-  , what_{std::move(other.what_)}
+  : category_{std::move(other.category_)}, what_{std::move(other.what_)}
 {
   ost_ << other.ost_.str();
   other.ost_.str(""); // Drop the other data.
@@ -108,7 +106,7 @@ exception::explain_self() const
 
   std::string part(indent_string(ost_.str()));
   ost << part;
-  if(!ends_with_newline(part))
+  if (!ends_with_newline(part))
     ost << '\n';
 
   ost << "---- " << category() << " END\n";
@@ -170,7 +168,7 @@ exception::append(std::ios_base& f(std::ios_base&))
 // ======================================================================
 
 std::ostream&
-cet::operator << (std::ostream& os, exception const& e)
+cet::operator<<(std::ostream& os, exception const& e)
 {
   return os << e.explain_self();
 }

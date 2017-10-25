@@ -63,8 +63,7 @@
 namespace cet {
   class exception;
 
-  std::ostream&
-  operator << (std::ostream& os, exception const& e);
+  std::ostream& operator<<(std::ostream& os, exception const& e);
 }
 
 // ======================================================================
@@ -72,16 +71,19 @@ namespace cet {
 namespace cet {
   namespace detail {
 
-    template<class D, bool = std::is_base_of<cet::exception, std::remove_reference_t<D>>::value>
+    template <
+      class D,
+      bool = std::is_base_of<cet::exception, std::remove_reference_t<D>>::value>
     struct enable_if_an_exception {
       using type = D&&;
     };
 
-    template<class D>
-    struct enable_if_an_exception<D,false> {};
+    template <class D>
+    struct enable_if_an_exception<D, false> {
+    };
 
-  }  // detail
-}  // cet
+  } // detail
+} // cet
 
 // ======================================================================
 
@@ -96,12 +98,11 @@ namespace cet {
 
     explicit exception(Category const& category);
 
-    exception(Category    const& category,
-              std::string const& message);
+    exception(Category const& category, std::string const& message);
 
-    exception(Category    const& category,
+    exception(Category const& category,
               std::string const& message,
-              exception   const& another);
+              exception const& another);
 
     exception(exception const& other);
 
@@ -120,59 +121,75 @@ namespace cet {
 
     char const* what() const noexcept override;
     virtual std::string explain_self() const;
-    std::string         category() const;
+    std::string category() const;
     CategoryList const& history() const;
-    std::string         root_cause() const;
+    std::string root_cause() const;
 
     // --- mutators:
 
     void append(exception const& another);
 
-    void append(std::string const& more_information  );
-    void append(char        const  more_information[]);
+    void append(std::string const& more_information);
+    void append(char const more_information[]);
 
-    void append(std::ostream & f(std::ostream &));
+    void append(std::ostream& f(std::ostream&));
     void append(std::ios_base& f(std::ios_base&));
 
-    template< class T >
-    void append(T const& more_information)
+    template <class T>
+    void
+    append(T const& more_information)
     {
       ost_ << more_information;
     }
 
   private:
-    std::ostringstream  ost_ {};
-    CategoryList        category_;
-    mutable std::string what_ {};
+    std::ostringstream ost_{};
+    CategoryList category_;
+    mutable std::string what_{};
 
-  };  // exception
+  }; // exception
 
-  template< class E >
+  template <class E>
   typename detail::enable_if_an_exception<E>::type
-  operator << (E&& e, std::string const& t)
-  { e.append(t); return std::forward<E>(e); }
+  operator<<(E&& e, std::string const& t)
+  {
+    e.append(t);
+    return std::forward<E>(e);
+  }
 
-  template< class E >
+  template <class E>
   typename detail::enable_if_an_exception<E>::type
-  operator << (E&& e, char const t[])
-  { e.append(t); return std::forward<E>(e); }
+  operator<<(E&& e, char const t[])
+  {
+    e.append(t);
+    return std::forward<E>(e);
+  }
 
-  template< class E >
+  template <class E>
   typename detail::enable_if_an_exception<E>::type
-  operator << (E&& e, std::ostream& f(std::ostream&))
-  { e.append(f); return std::forward<E>(e); }
+  operator<<(E&& e, std::ostream& f(std::ostream&))
+  {
+    e.append(f);
+    return std::forward<E>(e);
+  }
 
-  template< class E >
+  template <class E>
   typename detail::enable_if_an_exception<E>::type
-  operator << (E&& e, std::ios_base& f(std::ios_base&))
-  { e.append(f); return std::forward<E>(e); }
+  operator<<(E&& e, std::ios_base& f(std::ios_base&))
+  {
+    e.append(f);
+    return std::forward<E>(e);
+  }
 
-  template< class E, class T >
+  template <class E, class T>
   typename detail::enable_if_an_exception<E>::type
-  operator << (E&& e, T const& t)
-  { e.append(t); return std::forward<E>(e); }
+  operator<<(E&& e, T const& t)
+  {
+    e.append(t);
+    return std::forward<E>(e);
+  }
 
-}  // namespace cet
+} // namespace cet
 
 // ======================================================================
 
