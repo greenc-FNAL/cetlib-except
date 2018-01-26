@@ -197,3 +197,7 @@ namespace cet {
 // mode: c++
 // End:
 #endif /* cetlib_except_exception_h */
+
+// Local Variables:
+// mode: c++
+// End:
