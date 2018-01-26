@@ -1,5 +1,5 @@
-#ifndef cetlib_demangle_h
-#define cetlib_demangle_h
+#ifndef cetlib_except_demangle_h
+#define cetlib_except_demangle_h
 
 // ======================================================================
 //
@@ -38,7 +38,7 @@ cet::demangle(std::string const& mangled)
 }
 
 #undef DEMANGLE_MSG
-#endif /* cetlib_demangle_h */
+#endif /* cetlib_except_demangle_h */
 
 // Local Variables:
 // mode: c++
