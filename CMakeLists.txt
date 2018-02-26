@@ -23,6 +23,8 @@ cmake_minimum_required(VERSION 3.0)
 
 project(cetlib_except VERSION 1.01.02)
 
+# what is our path?
+message(STATUS "prefix path: ${CMAKE_PREFIX_PATH}")
 # cetmodules contains our cmake modules
 find_package(cetmodules REQUIRED)
 
