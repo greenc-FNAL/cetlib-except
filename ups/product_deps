@@ -1,4 +1,4 @@
-parent cetlib_except v1_02_00
+parent cetlib_except v1_02_01
 defaultqual e15
 #
 libdir	fq_dir lib
@@ -10,7 +10,7 @@ gcc		v6_4_0		e15
 gcc		v7_3_0		e17
 # gcc		v6_4_0		c2 # For gfortran if required.
 clang		v5_0_1		c2
-cetbuildtools	v7_03_02	-	only_for_build
+cetbuildtools	v7_03_03	-	only_for_build
 end_product_list
 
 
