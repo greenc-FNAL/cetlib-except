@@ -12,16 +12,13 @@
 #  make package (builds distribution tarfile)
 # ======================================================================
 
+# Required to keep CMake happy.
+cmake_minimum_required(VERSION ${CMAKE_VERSION} FATAL_ERROR)
+# Actual version requirement.
+cmake_policy(VERSION 3.4)
 
-# ----------------------------------------------------------------------
-# Describe build tool requirements:
-
-cmake_minimum_required(VERSION 3.0)  
-
-# ----------------------------------------------------------------------
-# Describe product:
-
-project(cetlib_except VERSION 1.01.02)
+# Project information.
+project(cetlib_except VERSION 1.01.02 LANGUAGES C CXX)
 
 # what is our path?
 message(STATUS "prefix path: ${CMAKE_PREFIX_PATH}")
