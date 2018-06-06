@@ -17,13 +17,10 @@ end_product_list
 # Matrix of qualifiers versus dependent products
 qualifier	clang	gcc	compiler	notes
 e15:debug	-	-nq-	gcc
-e15:opt		-	-nq-	gcc
 e15:prof	-	-nq-	gcc
 e17:debug	-	-nq-	gcc
-e17:opt		-	-nq-	gcc
 e17:prof	-	-nq-	gcc
 c2:debug	-nq-    -    clang
-c2:opt		-nq-    -    clang
 c2:prof		-nq-    -    clang
 end_qualifier_list
 
