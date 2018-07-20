@@ -18,7 +18,7 @@ cmake_minimum_required(VERSION ${CMAKE_VERSION} FATAL_ERROR)
 cmake_policy(VERSION 3.4)
 
 # Project information.
-project(cetlib_except VERSION 1.01.02 LANGUAGES C CXX)
+project(cetlib_except VERSION 1.01.02 LANGUAGES CXX)
 
 # what is our path?
 message(STATUS "prefix path: ${CMAKE_PREFIX_PATH}")
@@ -37,21 +37,7 @@ cet_set_compiler_flags(DIAGS VIGILANT
 cet_report_compiler_flags()
 
 # ----------------------------------------------------------------------
-# Describe build prerequisites:
-
-
-find_ups_product (cetmodules)
-
-# ----------------------------------------------------------------------
 # Describe source tree layout:
 
 add_subdirectory( ${PROJECT_NAME} )  # source code
 add_subdirectory( ups )              # ups files
-
-# ----------------------------------------------------------------------
-# Packaging utility
-
-##include(UseCPack)
-
-#
-# ======================================================================
