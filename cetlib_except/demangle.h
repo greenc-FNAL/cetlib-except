@@ -8,21 +8,13 @@
 // ======================================================================
 
 #include <string>
+#include <string_view>
 
 namespace cet {
-  std::string demangle_symbol(std::string const& symbol);
-  std::string demangle_symbol(char const* symbol);
-
+  std::string demangle_symbol(std::string_view symbol);
   std::string demangle_message(std::string mangled);
 }
 
-inline std::string
-cet::demangle_symbol(std::string const& symbol)
-{
-  return demangle_symbol(symbol.c_str());
-}
-
-#undef DEMANGLE_MSG
 #endif /* cetlib_except_demangle_h */
 
 // Local Variables:
