@@ -6,22 +6,26 @@ fcldir  -
 
 # define product/version pairs
 product	version
-gcc		v6_4_0		e15
 gcc		v7_3_0		e17
+gcc		v8_2_0		e19
 # gcc		v6_4_0		c2 # For gfortran if required.
-clang		v5_0_1		c2
-cetbuildtools	v7_05_01	-	only_for_build
+# gcc		v8_2_0		c5 # For gfortran if required.
+clang           v5_0_1          c2
+clang		v6_0_1		c5
+cetbuildtools	v7_06_02	-	only_for_build
 end_product_list
 
 
 # Matrix of qualifiers versus dependent products
 qualifier	clang	gcc	compiler	notes
-e15:debug	-	-nq-	gcc
-e15:prof	-	-nq-	gcc
 e17:debug	-	-nq-	gcc
 e17:prof	-	-nq-	gcc
-c2:debug	-nq-    -    clang
-c2:prof		-nq-    -    clang
+e19:debug	-	-nq-	gcc
+e19:prof	-	-nq-	gcc
+c2:debug	-nq-    -	clang
+c2:prof		-nq-    -	clang
+c5:debug	-nq-    -	clang
+c5:prof		-nq-    -	clang
 end_qualifier_list
 
 # Local Variables:
