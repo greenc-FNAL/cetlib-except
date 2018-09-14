@@ -79,8 +79,7 @@ namespace cet {
     };
 
     template <class D>
-    struct enable_if_an_exception<D, false> {
-    };
+    struct enable_if_an_exception<D, false> {};
 
   } // detail
 } // cet
