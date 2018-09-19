@@ -12,11 +12,11 @@
 #include <iostream>
 
 std::string
-cet::demangle_symbol(std::string_view const symbol)
+cet::demangle_symbol(char const* symbol)
 {
   std::string result;
   char* const unmangled =
-    abi::__cxa_demangle(symbol.data(), nullptr, nullptr, nullptr);
+    abi::__cxa_demangle(symbol, nullptr, nullptr, nullptr);
   if (unmangled != nullptr) {
     result = unmangled;
     free(unmangled);
