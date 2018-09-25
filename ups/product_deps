@@ -6,7 +6,6 @@ fcldir  -
 
 # define product/version pairs
 product	version
-gcc		v6_4_0		e15
 gcc		v7_3_0		e17
 # gcc		v6_4_0		c2 # For gfortran if required.
 clang		v5_0_1		c2
@@ -16,8 +15,6 @@ end_product_list
 
 # Matrix of qualifiers versus dependent products
 qualifier	clang	gcc	compiler	notes
-e15:debug	-	-nq-	gcc
-e15:prof	-	-nq-	gcc
 e17:debug	-	-nq-	gcc
 e17:prof	-	-nq-	gcc
 c2:debug	-nq-    -    clang
