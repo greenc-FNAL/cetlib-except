@@ -9,7 +9,7 @@ product	version
 gcc		v7_3_0		e17
 # gcc		v6_4_0		c2 # For gfortran if required.
 clang		v5_0_1		c2
-cetbuildtools	v7_05_01	-	only_for_build
+cetbuildtools	v7_06_04	-	only_for_build
 end_product_list
 
 
