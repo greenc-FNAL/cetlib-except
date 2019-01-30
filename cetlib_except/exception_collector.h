@@ -32,8 +32,7 @@ namespace cet {
 
   class exception_collector {
   public:
-
-    ~exception_collector () noexcept(false);
+    ~exception_collector() noexcept(false);
 
     // observer:
     bool has_thrown() const;
@@ -43,11 +42,11 @@ namespace cet {
     void call(std::function<void(void)>);
 
   private:
-    exception exception_ {std::string{}};
-    bool      has_thrown_ {false};
+    exception exception_{std::string{}};
+    bool has_thrown_{false};
   };
 
-}  // namespace cet
+} // namespace cet
 
 // ======================================================================
 

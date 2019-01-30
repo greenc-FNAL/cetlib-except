@@ -13,18 +13,22 @@ using namespace cet;
 // ======================================================================
 
 exception_collector::~exception_collector() noexcept(false)
-{ rethrow(); }
+{
+  rethrow();
+}
 
 // ----------------------------------------------------------------------
 
 bool
 exception_collector::has_thrown() const
-{ return has_thrown_; }
+{
+  return has_thrown_;
+}
 
 void
 exception_collector::rethrow()
 {
-  if(has_thrown_) {
+  if (has_thrown_) {
     has_thrown_ = false;
     throw exception_;
   }
@@ -36,18 +40,18 @@ exception_collector::call(std::function<void(void)> f)
   try {
     f();
   }
-  catch(cet::exception const& e) {
+  catch (cet::exception const& e) {
     has_thrown_ = true;
     exception_ << e;
   }
-  catch(std::exception const& e) {
+  catch (std::exception const& e) {
     has_thrown_ = true;
     exception_ << e.what();
   }
-  catch(...) {
+  catch (...) {
     has_thrown_ = true;
     exception_ << "Unknown exception";
   }
-}  // call()
+} // call()
 
 // ======================================================================
