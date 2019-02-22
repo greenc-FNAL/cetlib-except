@@ -71,11 +71,21 @@ cet_report_compiler_flags()
 
 
 find_ups_product (cetbuildtools v4_14_01)
+find_ups_product (python v3_7_2)
+
+
+# ----------------------------------------------------------------------
+# Python stuff
+
+#cet_find_library(PYTHON NAMES python2.7 PATHS ENV PYTHON_LIB NO_DEFAULT_PATH)
+cet_find_library(PYTHON NAMES python3.7 PATHS ENV PYTHON_LIB NO_DEFAULT_PATH)
+
 
 # ----------------------------------------------------------------------
 # Describe source tree layout:
 
 add_subdirectory( ${PROJECT_NAME} )  # source code
+#add_subdirectory( python )           # python (from ups)
 add_subdirectory( ups )              # ups files
 
 # ----------------------------------------------------------------------
