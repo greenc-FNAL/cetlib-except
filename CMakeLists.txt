@@ -30,6 +30,8 @@ find_package(cetbuildtools REQUIRED)
 include(CetCMakeEnv)
 cet_cmake_env()
 
+list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_LIST_DIR}/cmake)
+
 cet_set_compiler_flags(DIAGS VIGILANT
   WERROR
   NO_UNDEFINED
@@ -70,9 +72,8 @@ cet_report_compiler_flags()
 # ----------------------------------------------------------------------
 # Describe build prerequisites:
 
-
-find_ups_product (cetbuildtools v4_14_01)
-find_ups_product (python v3_7_2)
+find_ups_product(cetbuildtools)
+find_ups_product(python)
 
 
 # ----------------------------------------------------------------------
@@ -84,9 +85,9 @@ cet_find_library(PYTHON NAMES python3.7 PATHS ENV PYTHON_LIB NO_DEFAULT_PATH)
 # ----------------------------------------------------------------------
 # Describe source tree layout:
 
-add_subdirectory( ${PROJECT_NAME} )  # source code
-#add_subdirectory( python )           # python (from ups)
-add_subdirectory( ups )              # ups files
+add_subdirectory(${PROJECT_NAME}) # source code
+add_subdirectory(docs)
+add_subdirectory(ups)
 
 # ----------------------------------------------------------------------
 # Documentation generation:
