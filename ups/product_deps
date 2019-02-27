@@ -1,32 +1,32 @@
 parent cetlib_except v1_03_02
 defaultqual e17
 #
-libdir	fq_dir lib
+libdir  fq_dir lib
 fcldir  -
 
 # define product/version pairs
-product	version
-gcc		v7_3_0		e17
-gcc		v8_2_0		e19
-# gcc		v6_4_0		c2 # For gfortran if required.
-# gcc		v8_2_0		c7 # For gfortran if required.
-python  v3_7_2    e17  -  only_for_build
+product version
+gcc             v7_3_0          e17
+gcc             v8_2_0          e19
+# gcc           v6_4_0          c2 # For gfortran if required.
+# gcc           v8_2_0          c7 # For gfortran if required.
+python          v3_7_2           -      only_for_build
 clang           v5_0_1          c2
-clang		v7_0_0		c7
-cetbuildtools	v7_10_00	-	only_for_build
+clang           v7_0_0          c7
+cetbuildtools   v7_10_00        -       only_for_build
 end_product_list
 
 
 # Matrix of qualifiers versus dependent products
-qualifier	clang	gcc	compiler  python	notes
-e17:debug	-	-nq-	gcc       -nq-
-e17:prof	-	-nq-	gcc       -nq-  
-e19:debug	-	-nq-	gcc       -nq-
-e19:prof	-	-nq-	gcc       -nq-
-c2:debug	-nq-    -	clang     -nq- 
-c2:prof		-nq-    -	clang     -nq-
-c7:debug	-nq-    -	clang     -nq-
-c7:prof		-nq-    -	clang     -nq-
+qualifier       clang   gcc     compiler  python        notes
+e17:debug       -       -nq-    gcc       -nq-
+e17:prof        -       -nq-    gcc       -nq-
+e19:debug       -       -nq-    gcc       -nq-
+e19:prof        -       -nq-    gcc       -nq-
+c2:debug        -nq-    -       clang     -nq-
+c2:prof         -nq-    -       clang     -nq-
+c7:debug        -nq-    -       clang     -nq-
+c7:prof         -nq-    -       clang     -nq-
 end_qualifier_list
 
 # Local Variables:
