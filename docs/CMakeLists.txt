@@ -15,7 +15,8 @@ set(BINARY_BUILD_DIR "${CMAKE_CURRENT_BINARY_DIR}/_build")
 set(SPHINX_CACHE_DIR "${CMAKE_CURRENT_BINARY_DIR}/_doctrees")
 
 # HTML output directory
-set(SPHINX_HTML_DIR "${CMAKE_CURRENT_BINARY_DIR}/html")
+#set(SPHINX_HTML_DIR "${CMAKE_CURRENT_BINARY_DIR}/html")
+set(SPHINX_HTML_DIR "$ENV{MRB_TOP}/all_docs/cetlib_except")
 
 file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/_static/ DESTINATION ${BINARY_BUILD_DIR}/_static)
 file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/_templates/ DESTINATION ${BINARY_BUILD_DIR}/_templates)
@@ -27,7 +28,7 @@ configure_file(
 
 message(STATUS "SPHINX_EXECUTABLE: ${SPHINX_EXECUTABLE}")
 
-add_custom_target(cetlib_docs ALL
+add_custom_target(cetlib_except_docs ALL
   ${SPHINX_EXECUTABLE}
   -q -b html
   -c "${BINARY_BUILD_DIR}"

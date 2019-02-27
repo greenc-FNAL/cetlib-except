@@ -22,6 +22,7 @@ cmake_minimum_required(VERSION 3.11)  # use cmake 3.11 or later
 # Describe product:
 
 project(cetlib_except)
+set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 
 # cetbuildtools contains our cmake modules
 find_package(cetbuildtools REQUIRED)
@@ -80,13 +81,17 @@ find_ups_product (python v3_7_2)
 #cet_find_library(PYTHON NAMES python2.7 PATHS ENV PYTHON_LIB NO_DEFAULT_PATH)
 cet_find_library(PYTHON NAMES python3.7 PATHS ENV PYTHON_LIB NO_DEFAULT_PATH)
 
-
 # ----------------------------------------------------------------------
 # Describe source tree layout:
 
 add_subdirectory( ${PROJECT_NAME} )  # source code
 #add_subdirectory( python )           # python (from ups)
 add_subdirectory( ups )              # ups files
+
+# ----------------------------------------------------------------------
+# Documentation generation:
+#find_package(Sphinx REQUIRED)
+add_subdirectory( docs )              # docs files
 
 # ----------------------------------------------------------------------
 # Packaging utility
