@@ -11,6 +11,8 @@
 
    Release notes<releaseNotes>
 
+   Depends on<depends>
+
 The cetlib_except C++ library is a subset of the *project:cetlib* (FIX THIS LINK?) library, designed to minimize coupling to external products while still providing exception facilities.  As such, the only dependency is on the C++ standard library provided by the compiler.  The facilities provided are:
 
 

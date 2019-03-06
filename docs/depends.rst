@@ -1,5 +1,5 @@
-|depends| depends
-=================
+|release| depends on
+====================
 
 | (external link): gcc v7_3_0
 | (external link): gcc v8_2_0
