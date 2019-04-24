@@ -70,8 +70,6 @@ cet_report_compiler_flags()
 # Describe build prerequisites:
 
 
-find_ups_product (cetbuildtools v4_14_01)
-
 # ----------------------------------------------------------------------
 # Describe source tree layout:
 
