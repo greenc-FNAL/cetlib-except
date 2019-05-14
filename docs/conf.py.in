@@ -90,7 +90,7 @@ language = None
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path .
-exclude_patterns = []
+exclude_patterns = ['series_notes/*', 'suite_notes/*', '*temp.rst']
 
 # The name of the Pygments (syntax highlighting) style to use.
 pygments_style = 'sphinx'
@@ -188,7 +188,7 @@ texinfo_documents = [
 # -- Extension configuration -------------------------------------------------
 fnal_redmine_url = 'https://cdcvs.fnal.gov/redmine/'
 def setup(app):
-    app.add_stylesheet('artdoc.css')
+    app.add_stylesheet('_static/artdoc.css')
 
 # -- Options for intersphinx extension ---------------------------------------
 
@@ -220,6 +220,7 @@ with open(src+'/'+project+'/ups/product_deps') as deps_file:
 
 
 with open(src+'/'+project+'/docs/depends.rst', 'w+') as deps_page:
+  deps_page.write(':orphan:\n\n')
   deps_page.write('|release| depends on')
   deps_page.write('\n====================\n')
   for pkg in depends_on:

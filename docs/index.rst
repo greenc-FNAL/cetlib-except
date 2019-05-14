@@ -4,7 +4,7 @@
    contain the root `toctree` directive.
 
 *cetlib_except* library
-================
+=======================
 
 .. toctree::
    :maxdepth: 2
