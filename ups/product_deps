@@ -1,29 +1,21 @@
-parent cetlib_except v1_03_04
-defaultqual e17
+parent cetlib_except v1_04_00
+defaultqual e19
 #
 libdir	fq_dir lib
 fcldir  -
 
 # define product/version pairs
 product	version
-gcc		v7_3_0		e17
 gcc		v8_2_0		e19
-# gcc		v6_4_0		c2 # For gfortran if required.
-# gcc		v8_2_0		c7 # For gfortran if required.
-clang           v5_0_1          c2
 clang		v7_0_0		c7
-cetbuildtools	v7_13_02	-	only_for_build
+cetbuildtools	v7_14_00	-	only_for_build
 end_product_list
 
 
 # Matrix of qualifiers versus dependent products
 qualifier	clang	gcc	compiler	notes
-e17:debug	-	-nq-	gcc
-e17:prof	-	-nq-	gcc
 e19:debug	-	-nq-	gcc
 e19:prof	-	-nq-	gcc
-c2:debug	-nq-    -	clang
-c2:prof		-nq-    -	clang
 c7:debug	-nq-    -	clang
 c7:prof		-nq-    -	clang
 end_qualifier_list

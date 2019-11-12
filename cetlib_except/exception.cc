@@ -80,13 +80,6 @@ exception::exception(exception const& other)
   ost_ << other.ost_.str();
 }
 
-exception::exception(exception&& other)
-  : category_{std::move(other.category_)}, what_{std::move(other.what_)}
-{
-  ost_ << other.ost_.str();
-  other.ost_.str(""); // Drop the other data.
-}
-
 // ======================================================================
 // inspectors:
 
