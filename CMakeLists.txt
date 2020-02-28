@@ -12,16 +12,8 @@
 #  make package (builds distribution tarfile)
 # ======================================================================
 
-
-# ----------------------------------------------------------------------
-# Describe build tool requirements:
-
-cmake_minimum_required(VERSION 3.11)  # use cmake 3.11 or later
-
-# ----------------------------------------------------------------------
-# Describe product:
-
-project(cetlib_except)
+cmake_minimum_required(VERSION 3.14..3.14 FATAL_ERROR)
+project(cetlib_except LANGUAGES CXX)
 
 # cetbuildtools contains our cmake modules
 find_package(cetbuildtools REQUIRED)
