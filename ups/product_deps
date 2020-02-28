@@ -1,4 +1,4 @@
-parent cetlib_except v1_04_00
+parent cetlib_except v1_04_01
 defaultqual e19
 #
 libdir	fq_dir lib
@@ -8,7 +8,7 @@ fcldir  -
 product	version
 gcc		v8_2_0		e19
 clang		v7_0_0		c7
-cetbuildtools	v7_14_00	-	only_for_build
+cetbuildtools	v7_15_01	-	only_for_build
 end_product_list
 
 
