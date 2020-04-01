@@ -67,7 +67,7 @@ cet_report_compiler_flags()
 
 add_subdirectory( ${PROJECT_NAME} )  # source code
 add_subdirectory( ups )              # ups files
-
+add_subdirectory( cmakeConfig )      # for cetmodules
 # ----------------------------------------------------------------------
 # Packaging utility
 
