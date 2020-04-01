@@ -13,7 +13,7 @@
 # ======================================================================
 
 cmake_minimum_required(VERSION 3.12...3.14 FATAL_ERROR)
-project(cetlib_except LANGUAGES CXX)
+project(cetlib_except VERSION 1.04.01 LANGUAGES CXX)
 
 # cetbuildtools contains our cmake modules
 find_package(cetbuildtools REQUIRED)
