@@ -74,7 +74,7 @@ exception::exception(Category const& c,
 // ======================================================================
 // copy c'tor:
 
-exception::exception(exception const& other)
+exception::exception(exception const& other) noexcept
   : category_{other.category_}, what_{other.what_}
 {
   ost_ << other.ost_.str();

@@ -101,7 +101,12 @@ namespace cet {
               std::string const& message,
               exception const& another);
 
-    exception(exception const& other);
+    // The 'noexcept' keyword is applied to the copy c'tor to indicate
+    // that if an exception escapes the copy constructor call, then an
+    // immediate std::terminate() will be invoked.  Such a
+    // circumstance would likely be a symptom of memory exhaustion, in
+    // which case program recovery is incredibly unlikely.
+    exception(exception const& other) noexcept;
 
     virtual ~exception() noexcept = default;
 
