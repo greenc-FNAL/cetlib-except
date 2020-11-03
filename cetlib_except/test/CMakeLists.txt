@@ -8,7 +8,7 @@ include(CetTest)
 cet_enable_asserts()
 
 # Identify libraries to be linked:
-link_libraries(cetlib_except)
+link_libraries(cetlib_except) ### MIGRATE-ACTION-RECOMMENDED: use target_link_libraries() with target semantics
 
 cet_test(coded_exception_test)
 cet_test(exception_collector_test)
