@@ -13,10 +13,9 @@
 # ======================================================================
 
 cmake_minimum_required(VERSION 3.12...3.14 FATAL_ERROR)
-project(cetlib_except LANGUAGES CXX)
 
-# cetbuildtools contains our cmake modules
 find_package(cetbuildtools REQUIRED)
+project(cetlib_except LANGUAGES CXX)
 
 include(CetCMakeEnv)
 cet_cmake_env()
@@ -61,6 +60,7 @@ cet_report_compiler_flags()
 # ----------------------------------------------------------------------
 # Describe build prerequisites:
 
+find_ups_product(catch)
 
 # ----------------------------------------------------------------------
 # Describe source tree layout:
