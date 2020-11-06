@@ -11,6 +11,8 @@ cet_enable_asserts()
 link_libraries(cetlib_except) ### MIGRATE-ACTION-RECOMMENDED: use target_link_libraries() with target semantics
 
 cet_test(coded_exception_test)
+cet_test(exception_category_matcher_t USE_CATCH_MAIN)
 cet_test(exception_collector_test)
+cet_test(exception_message_matcher_t USE_CATCH_MAIN)
 cet_test(exception_test)
 cet_test(demangle_t)

@@ -20,8 +20,6 @@ cmake_policy(SET CMP0096 NEW)
 find_package(cetmodules 2.02.01 REQUIRED)
 project(cetlib_except VERSION 1.05.00 LANGUAGES CXX)
 
-# cetbuildtools contains our cmake modules ### MIGRATE-ACTION-REQUIRED: remove
-
 include(CetCMakeEnv)
 cet_cmake_env()
 
@@ -65,6 +63,7 @@ cet_report_compiler_flags(REPORT_THRESHOLD VERBOSE)
 # ----------------------------------------------------------------------
 # Describe build prerequisites:
 
+find_ups_product(catch)
 
 # ----------------------------------------------------------------------
 # Describe source tree layout:
