@@ -27,7 +27,7 @@ cet_set_compiler_flags(DIAGS VIGILANT
   WERROR
   NO_UNDEFINED
   EXTRA_FLAGS -pedantic
-  EXTRA_CXX_FLAGS -Wnon-virtual-dtor -Wdelete-non-virtual-dtor
+  $<$<COMPILE_LANGUAGE:CXX>:-Wnon-virtual-dtor;-Wdelete-non-virtual-dtor>
   )
 
 if($ENV{CET_SANITIZE_ADDRESS})
@@ -63,7 +63,7 @@ cet_report_compiler_flags(REPORT_THRESHOLD VERBOSE)
 # ----------------------------------------------------------------------
 # Describe build prerequisites:
 
-find_ups_product(catch) ### MIGRATE-ACTION-RECOMMENDED: use cet_find_package() with target semantics for linking
+cet_find_package(catch PRIVATE)
 
 # ----------------------------------------------------------------------
 # Describe source tree layout:
