@@ -17,7 +17,7 @@ cmake_policy(VERSION 3.14)
 # Policy CMP0096 must be set to NEW to preserve leading zeros in the
 # VERSION set by project().
 cmake_policy(SET CMP0096 NEW)
-find_package(cetmodules 2.02.01 REQUIRED)
+find_package(cetmodules 2.03.00 REQUIRED)
 project(cetlib_except VERSION 1.05.00 LANGUAGES CXX)
 
 include(CetCMakeEnv)
@@ -63,7 +63,7 @@ cet_report_compiler_flags(REPORT_THRESHOLD VERBOSE)
 # ----------------------------------------------------------------------
 # Describe build prerequisites:
 
-find_ups_product(catch)
+find_ups_product(catch) ### MIGRATE-ACTION-RECOMMENDED: use cet_find_package() with target semantics for linking
 
 # ----------------------------------------------------------------------
 # Describe source tree layout:
