@@ -17,7 +17,7 @@ cmake_policy(VERSION 3.14)
 # Policy CMP0096 must be set to NEW to preserve leading zeros in the
 # VERSION set by project().
 cmake_policy(SET CMP0096 NEW)
-find_package(cetmodules 2.03.00 REQUIRED)
+find_package(cetmodules 2.04.00 REQUIRED)
 project(cetlib_except VERSION 1.05.00 LANGUAGES CXX)
 
 include(CetCMakeEnv)
@@ -27,7 +27,6 @@ cet_set_compiler_flags(DIAGS VIGILANT
   WERROR
   NO_UNDEFINED
   EXTRA_FLAGS -pedantic
-  $<$<COMPILE_LANGUAGE:CXX>:-Wnon-virtual-dtor;-Wdelete-non-virtual-dtor>
   )
 
 if($ENV{CET_SANITIZE_ADDRESS})
