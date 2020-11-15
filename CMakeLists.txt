@@ -62,7 +62,7 @@ cet_report_compiler_flags(REPORT_THRESHOLD VERBOSE)
 # ----------------------------------------------------------------------
 # Describe build prerequisites:
 
-cet_find_package(Catch2 PRIVATE)
+cet_find_package(Catch2 PRIVATE REQUIRED)
 
 # ----------------------------------------------------------------------
 # Describe source tree layout:
