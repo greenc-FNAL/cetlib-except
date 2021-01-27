@@ -1,4 +1,4 @@
-parent cetlib_except v1_05_00
+parent cetlib_except v1_06_00
 defaultqual e19
 #
 libdir	fq_dir lib
@@ -10,7 +10,7 @@ clang		v7_0_0		c7
 gcc		v8_2_0		e19
 gcc		v9_3_0		e20
 catch		v2_12_2		-	only_for_build
-cetbuildtools	v7_17_01	-	only_for_build
+cetbuildtools	v7_17_02	-	only_for_build
 end_product_list
 
 
