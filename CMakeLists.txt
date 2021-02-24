@@ -13,7 +13,7 @@
 # ======================================================================
 cmake_minimum_required(VERSION 3.18.2 FATAL_ERROR)
 
-find_package(cetmodules 2.04.00 REQUIRED)
+find_package(cetmodules 2.10.00 REQUIRED)
 project(cetlib_except VERSION 1.06.00 LANGUAGES CXX)
 
 include(CetCMakeEnv)
@@ -61,4 +61,4 @@ add_subdirectory( ${PROJECT_NAME} )  # source code
 
 #
 # ======================================================================
-cet_cmake_config(COMPATIBILITY SameMajorVersion)
+cet_cmake_config()
