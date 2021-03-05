@@ -10,7 +10,7 @@ include(CetMake)
 # calling (cet)?find_package(Catch2) themselves.
 cet_find_package(Catch2 PRIVATE REQUIRED)
 
-cet_make_library(LIBRARY_NAME ${PROJECT_NAME}
+cet_make_library(HEADERS_TARGET
   SOURCE
     demangle.cc
     exception.cc
