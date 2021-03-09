@@ -1,20 +1,7 @@
-# ======================================================================
-#  cetlib main build file
-#
-#  cd .../path/to/build/directory
-#  source .../path/to/cetlib/ups/setup_for_development
-#  cmake [-DCMAKE_INSTALL_PREFIX=/install/path]
-#        -DCMAKE_BUILD_TYPE=$CETPKG_TYPE
-#        $CETPKG_SOURCE
-#  make
-#  make test
-#  make install
-#  make package (builds distribution tarfile)
-# ======================================================================
 cmake_minimum_required(VERSION 3.18.2 FATAL_ERROR)
 
-find_package(cetmodules 2.04.00 REQUIRED)
-project(cetlib_except VERSION 1.06.00 LANGUAGES CXX)
+find_package(cetmodules 2.13.00 REQUIRED)
+project(cetlib_except VERSION 1.07.00 LANGUAGES CXX)
 
 include(CetCMakeEnv)
 cet_cmake_env()
@@ -46,11 +33,6 @@ endif()
 cet_report_compiler_flags(REPORT_THRESHOLD VERBOSE)
 
 # ----------------------------------------------------------------------
-# Describe build prerequisites:
-
-cet_find_package(Catch2 PRIVATE REQUIRED)
-
-# ----------------------------------------------------------------------
 # Describe source tree layout:
 
 add_subdirectory( ${PROJECT_NAME} )  # source code
@@ -61,4 +43,4 @@ add_subdirectory( ${PROJECT_NAME} )  # source code
 
 #
 # ======================================================================
-cet_cmake_config(COMPATIBILITY SameMajorVersion)
+cet_cmake_config()
