@@ -19,14 +19,14 @@ std::string
 mapper(E code)
 {
   switch (code) {
-    case E1:
-      return "E1";
-    case E2:
-      return "E2";
-    case E3:
-      return "E3";
-    default:
-      return "Unknown";
+  case E1:
+    return "E1";
+  case E2:
+    return "E2";
+  case E3:
+    return "E3";
+  default:
+    return "Unknown";
   }
 }
 
