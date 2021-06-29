@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.18.2 FATAL_ERROR)
 
 find_package(cetmodules 2.13.00 REQUIRED)
-project(cetlib_except VERSION 1.07.02 LANGUAGES CXX)
+project(cetlib_except VERSION 1.07.03 LANGUAGES CXX)
 
 include(CetCMakeEnv)
 cet_cmake_env()
