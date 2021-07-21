@@ -8,7 +8,7 @@ include(CetMake)
 
 # If someone is using cetlib_except::Catch2Matchers, they will be
 # calling (cet)?find_package(Catch2) themselves.
-cet_find_package(Catch2 PRIVATE REQUIRED)
+find_package(Catch2 PRIVATE REQUIRED)
 
 cet_make_library(HEADERS_TARGET
   SOURCE
