@@ -108,7 +108,7 @@ namespace cet {
     // which case program recovery is incredibly unlikely.
     exception(exception const& other) noexcept;
 
-    virtual ~exception() noexcept = default;
+    virtual ~exception() noexcept;
 
     // --- inspectors:
 

@@ -81,6 +81,11 @@ exception::exception(exception const& other) noexcept
 }
 
 // ======================================================================
+// d'tor:
+
+exception::~exception() noexcept = default;
+
+// ======================================================================
 // inspectors:
 
 char const*
