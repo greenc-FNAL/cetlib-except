@@ -253,7 +253,7 @@ gcc		v9_3_0		e20
 gcc		v10_3_0a	e24
 gcc		v11_3_0		e25
 catch		v2_13_9		-	only_for_build
-cetmodules	v3_13_01	-	only_for_build
+cetmodules	v3_13_02	-	only_for_build
 end_product_list
 ####################################
 
