@@ -252,6 +252,7 @@ clang		v7_0_0		c7
 gcc		v9_3_0		e20
 gcc		v10_3_0a	e24
 gcc		v11_3_0		e25
+gcc		v12_1_0		e26
 catch		v2_13_9		-	only_for_build
 cetmodules	v3_13_02	-	only_for_build
 end_product_list
@@ -317,6 +318,8 @@ e24:debug	-	-nq-	gcc
 e24:prof	-	-nq-	gcc
 e25:debug	-	-nq-	gcc
 e25:prof	-	-nq-	gcc
+e26:debug	-	-nq-	gcc
+e26:prof	-	-nq-	gcc
 end_qualifier_list
 ####################################
 
