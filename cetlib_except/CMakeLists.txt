@@ -8,7 +8,7 @@ include(CetMake)
 
 # If someone is using cetlib_except::Catch2Matchers, they will be
 # calling (cet)?find_package(Catch2) themselves.
-find_package(Catch2 PRIVATE REQUIRED)
+find_package(Catch2 REQUIRED)
 
 cet_make_library(HEADERS_TARGET
   SOURCE
@@ -24,7 +24,7 @@ cet_make_library(LIBRARY_NAME Catch2Matchers INTERFACE
       #
       # See note above. We can put this back if this target is
       # registered as an optional component; otherwise either (a)
-      # find_package(Catch2 PRIVATE REQUIRED) must precede any direct or
+      # find_package(Catch2 REQUIRED) must precede any direct or
       # indirect invocation of find_package(cetlib_except) in any
       # package needing this target; or (b) every dependent of
       # cetlib_except inherits a dependency on Catch2.
