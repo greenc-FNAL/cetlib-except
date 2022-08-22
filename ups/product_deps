@@ -253,7 +253,7 @@ clang		v14_0_6c	c14
 gcc		v9_3_0		e20
 gcc		v12_1_0		e26
 catch		v2_13_9		-	only_for_build
-cetmodules	v3_19_00	-	only_for_build
+cetmodules	v3_19_01	-	only_for_build
 end_product_list
 ####################################
 
