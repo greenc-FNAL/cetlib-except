@@ -87,7 +87,7 @@
 #>  define_pythonpath
 ####################################
 parent		cetlib_except
-defaultqual	e19
+defaultqual	e20
 ####################################
 
 ####################################
@@ -249,10 +249,11 @@ libdir	fq_dir	lib
 ####################################
 product		version		qual	flags		<table_format=2>
 clang		v7_0_0		c7
-gcc		v8_2_0		e19
+clang		v14_0_6c	c14
 gcc		v9_3_0		e20
-catch		v2_13_7		-	only_for_build
-cetmodules	v3_07_00	-	only_for_build
+gcc		v12_1_0		e26
+catch		v2_13_9		-	only_for_build
+cetmodules	v3_19_02	-	only_for_build
 end_product_list
 ####################################
 
@@ -310,10 +311,12 @@ end_product_list
 qualifier	clang	gcc	compiler	notes
 c7:debug	-nq-	-	clang
 c7:prof		-nq-	-	clang
-e19:debug	-	-nq-	gcc
-e19:prof	-	-nq-	gcc
+c14:debug	-nq-	-	clang
+c14:prof	-nq-	-	clang
 e20:debug	-	-nq-	gcc
 e20:prof	-	-nq-	gcc
+e26:debug	-	-nq-	gcc
+e26:prof	-	-nq-	gcc
 end_qualifier_list
 ####################################
 
