@@ -1,4 +1,4 @@
-#include <catch2/catch.hpp>
+#include <catch2/catch_test_macros.hpp>
 
 #include "cetlib_except/exception_message_matcher.h"
 
@@ -6,7 +6,7 @@ using cet::exception_message_matcher;
 
 TEST_CASE("Contains Match")
 {
-  exception_message_matcher matcher(Catch::Matchers::Contains("x"));
+  exception_message_matcher matcher(Catch::Matchers::ContainsSubstring("x"));
   cet::exception e("junk");
   SECTION("Exception message matches")
   {
@@ -127,8 +127,8 @@ TEST_CASE("Regex Match")
 
 TEST_CASE("Composed Matchers")
 {
-  exception_message_matcher xmatcher(Catch::Matchers::Contains("x")),
-    ymatcher(Catch::Matchers::Contains("y\n"));
+  exception_message_matcher xmatcher(Catch::Matchers::ContainsSubstring("x")),
+    ymatcher(Catch::Matchers::ContainsSubstring("y\n"));
   cet::exception e("junk");
   SECTION("Exception message matches")
   {

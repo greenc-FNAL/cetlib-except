@@ -248,12 +248,8 @@ libdir	fq_dir	lib
 #
 ####################################
 product		version		qual	flags		<table_format=2>
-clang		v7_0_0		c7
-clang		v14_0_6c	c14
-gcc		v9_3_0		e20
-gcc		v12_1_0		e26
-catch		v2_13_9		-	only_for_build
-cetmodules	v3_19_02	-	only_for_build
+catch		v3_3_1a		-	only_for_build
+cetmodules	v3_20_01	-	only_for_build
 end_product_list
 ####################################
 
@@ -308,15 +304,17 @@ end_product_list
 #   case it is optional.
 #
 ####################################
-qualifier	clang	gcc	compiler	notes
-c7:debug	-nq-	-	clang
-c7:prof		-nq-	-	clang
-c14:debug	-nq-	-	clang
-c14:prof	-nq-	-	clang
-e20:debug	-	-nq-	gcc
-e20:prof	-	-nq-	gcc
-e26:debug	-	-nq-	gcc
-e26:prof	-	-nq-	gcc
+qualifier	catch	notes
+c14:debug	c14
+c14:prof	c14
+c15:debug	c15
+c15:prof	c15
+e20:debug	e20
+e20:prof	e20
+e26:debug	e26
+e26:prof	e26
+e27:debug	e27
+e27:prof	e27
 end_qualifier_list
 ####################################
 

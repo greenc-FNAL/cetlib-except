@@ -13,7 +13,7 @@
 // such as cet::exception_message_matcher.
 ////////////////////////////////////////////////////////////////////////
 #include "cetlib_except/exception.h"
-#include <catch2/catch.hpp>
+#include <catch2/matchers/catch_matchers.hpp>
 
 #include <string>
 
@@ -22,7 +22,7 @@ namespace cet {
 }
 
 class cet::exception_category_matcher
-  : public Catch::MatcherBase<cet::exception> {
+  : public Catch::Matchers::MatcherBase<cet::exception> {
 public:
   explicit exception_category_matcher(std::string category)
     : category_{std::move(category)}
