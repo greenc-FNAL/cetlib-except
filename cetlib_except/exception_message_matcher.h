@@ -25,10 +25,8 @@ namespace cet {
 class cet::exception_message_matcher
   : public Catch::Matchers::MatcherBase<cet::exception> {
 public:
-  exception_message_matcher(
-    Catch::Matchers::StringEqualsMatcher const& matcher)
-    : matcher_{std::make_shared<Catch::Matchers::StringEqualsMatcher>(
-        matcher)}
+  exception_message_matcher(Catch::Matchers::StringEqualsMatcher const& matcher)
+    : matcher_{std::make_shared<Catch::Matchers::StringEqualsMatcher>(matcher)}
     , description_{matcher.describe()}
   {}
 
@@ -39,24 +37,18 @@ public:
     , description_{matcher.describe()}
   {}
 
-  exception_message_matcher(
-    Catch::Matchers::StartsWithMatcher const& matcher)
-    : matcher_{std::make_shared<Catch::Matchers::StartsWithMatcher>(
-        matcher)}
+  exception_message_matcher(Catch::Matchers::StartsWithMatcher const& matcher)
+    : matcher_{std::make_shared<Catch::Matchers::StartsWithMatcher>(matcher)}
     , description_{matcher.describe()}
   {}
 
-  exception_message_matcher(
-    Catch::Matchers::EndsWithMatcher const& matcher)
-    : matcher_{std::make_shared<Catch::Matchers::EndsWithMatcher>(
-        matcher)}
+  exception_message_matcher(Catch::Matchers::EndsWithMatcher const& matcher)
+    : matcher_{std::make_shared<Catch::Matchers::EndsWithMatcher>(matcher)}
     , description_{matcher.describe()}
   {}
 
-  exception_message_matcher(
-    Catch::Matchers::RegexMatcher const& matcher)
-    : matcher_{std::make_shared<Catch::Matchers::RegexMatcher>(
-        matcher)}
+  exception_message_matcher(Catch::Matchers::RegexMatcher const& matcher)
+    : matcher_{std::make_shared<Catch::Matchers::RegexMatcher>(matcher)}
     , description_{matcher.describe()}
   {}
 

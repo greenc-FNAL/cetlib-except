@@ -15,7 +15,10 @@ TEST_CASE("Contains Match")
     {
       CHECK_THROWS_MATCHES(throw e, cet::exception, matcher);
     }
-    SECTION("Not Thrown") { CHECK_THAT(e, matcher); }
+    SECTION("Not Thrown")
+    {
+      CHECK_THAT(e, matcher);
+    }
   }
   SECTION("Exception message does not match")
   {
@@ -24,7 +27,10 @@ TEST_CASE("Contains Match")
     {
       CHECK_THROWS_MATCHES(throw e, cet::exception, !matcher);
     }
-    SECTION("Not Thrown") { CHECK_THAT(e, !matcher); }
+    SECTION("Not Thrown")
+    {
+      CHECK_THAT(e, !matcher);
+    }
   }
 }
 
@@ -40,7 +46,10 @@ TEST_CASE("Equals Match")
     {
       CHECK_THROWS_MATCHES(throw e, cet::exception, matcher);
     }
-    SECTION("Not Thrown") { CHECK_THAT(e, matcher); }
+    SECTION("Not Thrown")
+    {
+      CHECK_THAT(e, matcher);
+    }
   }
   SECTION("Exception message does not match")
   {
@@ -49,7 +58,10 @@ TEST_CASE("Equals Match")
     {
       CHECK_THROWS_MATCHES(throw e, cet::exception, !matcher);
     }
-    SECTION("Not Thrown") { CHECK_THAT(e, !matcher); }
+    SECTION("Not Thrown")
+    {
+      CHECK_THAT(e, !matcher);
+    }
   }
 }
 
@@ -64,7 +76,10 @@ TEST_CASE("StartsWith Match")
     {
       CHECK_THROWS_MATCHES(throw e, cet::exception, matcher);
     }
-    SECTION("Not Thrown") { CHECK_THAT(e, matcher); }
+    SECTION("Not Thrown")
+    {
+      CHECK_THAT(e, matcher);
+    }
   }
   SECTION("Exception message does not match")
   {
@@ -73,7 +88,10 @@ TEST_CASE("StartsWith Match")
     {
       CHECK_THROWS_MATCHES(throw e, cet::exception, !matcher);
     }
-    SECTION("Not Thrown") { CHECK_THAT(e, !matcher); }
+    SECTION("Not Thrown")
+    {
+      CHECK_THAT(e, !matcher);
+    }
   }
 }
 
@@ -88,7 +106,10 @@ TEST_CASE("EndsWith Match")
     {
       CHECK_THROWS_MATCHES(throw e, cet::exception, matcher);
     }
-    SECTION("Not Thrown") { CHECK_THAT(e, matcher); }
+    SECTION("Not Thrown")
+    {
+      CHECK_THAT(e, matcher);
+    }
   }
   SECTION("Exception message does not match")
   {
@@ -97,7 +118,10 @@ TEST_CASE("EndsWith Match")
     {
       CHECK_THROWS_MATCHES(throw e, cet::exception, !matcher);
     }
-    SECTION("Not Thrown") { CHECK_THAT(e, !matcher); }
+    SECTION("Not Thrown")
+    {
+      CHECK_THAT(e, !matcher);
+    }
   }
 }
 
@@ -112,7 +136,10 @@ TEST_CASE("Regex Match")
     {
       CHECK_THROWS_MATCHES(throw e, cet::exception, matcher);
     }
-    SECTION("Not Thrown") { CHECK_THAT(e, matcher); }
+    SECTION("Not Thrown")
+    {
+      CHECK_THAT(e, matcher);
+    }
   }
   SECTION("Exception message does not match")
   {
@@ -121,7 +148,10 @@ TEST_CASE("Regex Match")
     {
       CHECK_THROWS_MATCHES(throw e, cet::exception, !matcher);
     }
-    SECTION("Not Thrown") { CHECK_THAT(e, !matcher); }
+    SECTION("Not Thrown")
+    {
+      CHECK_THAT(e, !matcher);
+    }
   }
 }
 
@@ -137,7 +167,10 @@ TEST_CASE("Composed Matchers")
     {
       CHECK_THROWS_MATCHES(throw e, cet::exception, xmatcher && ymatcher);
     }
-    SECTION("Not Thrown") { CHECK_THAT(e, xmatcher && ymatcher); }
+    SECTION("Not Thrown")
+    {
+      CHECK_THAT(e, xmatcher && ymatcher);
+    }
   }
   SECTION("Exception message does not match")
   {
@@ -146,6 +179,9 @@ TEST_CASE("Composed Matchers")
     {
       CHECK_THROWS_MATCHES(throw e, cet::exception, !(xmatcher && ymatcher));
     }
-    SECTION("Not Thrown") { CHECK_THAT(e, !(xmatcher && ymatcher)); }
+    SECTION("Not Thrown")
+    {
+      CHECK_THAT(e, !(xmatcher && ymatcher));
+    }
   }
 }
