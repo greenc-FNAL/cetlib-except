@@ -1,4 +1,4 @@
-#include <catch2/catch.hpp>
+#include <catch2/catch_test_macros.hpp>
 
 #include "cetlib_except/exception_category_matcher.h"
 
@@ -14,7 +14,10 @@ TEST_CASE("Category matcher")
     {
       CHECK_THROWS_MATCHES(throw e, cet::exception, matcher);
     }
-    SECTION("Not Thrown") { CHECK_THAT(e, matcher); }
+    SECTION("Not Thrown")
+    {
+      CHECK_THAT(e, matcher);
+    }
   }
   SECTION("Exception category does not match")
   {
@@ -23,6 +26,9 @@ TEST_CASE("Category matcher")
     {
       CHECK_THROWS_MATCHES(throw e, cet::exception, !matcher);
     }
-    SECTION("Not Thrown") { CHECK_THAT(e, !matcher); }
+    SECTION("Not Thrown")
+    {
+      CHECK_THAT(e, !matcher);
+    }
   }
 }

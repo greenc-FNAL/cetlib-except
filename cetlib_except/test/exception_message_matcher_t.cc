@@ -1,4 +1,4 @@
-#include <catch2/catch.hpp>
+#include <catch2/catch_test_macros.hpp>
 
 #include "cetlib_except/exception_message_matcher.h"
 
@@ -6,7 +6,7 @@ using cet::exception_message_matcher;
 
 TEST_CASE("Contains Match")
 {
-  exception_message_matcher matcher(Catch::Matchers::Contains("x"));
+  exception_message_matcher matcher(Catch::Matchers::ContainsSubstring("x"));
   cet::exception e("junk");
   SECTION("Exception message matches")
   {
@@ -15,7 +15,10 @@ TEST_CASE("Contains Match")
     {
       CHECK_THROWS_MATCHES(throw e, cet::exception, matcher);
     }
-    SECTION("Not Thrown") { CHECK_THAT(e, matcher); }
+    SECTION("Not Thrown")
+    {
+      CHECK_THAT(e, matcher);
+    }
   }
   SECTION("Exception message does not match")
   {
@@ -24,7 +27,10 @@ TEST_CASE("Contains Match")
     {
       CHECK_THROWS_MATCHES(throw e, cet::exception, !matcher);
     }
-    SECTION("Not Thrown") { CHECK_THAT(e, !matcher); }
+    SECTION("Not Thrown")
+    {
+      CHECK_THAT(e, !matcher);
+    }
   }
 }
 
@@ -40,7 +46,10 @@ TEST_CASE("Equals Match")
     {
       CHECK_THROWS_MATCHES(throw e, cet::exception, matcher);
     }
-    SECTION("Not Thrown") { CHECK_THAT(e, matcher); }
+    SECTION("Not Thrown")
+    {
+      CHECK_THAT(e, matcher);
+    }
   }
   SECTION("Exception message does not match")
   {
@@ -49,7 +58,10 @@ TEST_CASE("Equals Match")
     {
       CHECK_THROWS_MATCHES(throw e, cet::exception, !matcher);
     }
-    SECTION("Not Thrown") { CHECK_THAT(e, !matcher); }
+    SECTION("Not Thrown")
+    {
+      CHECK_THAT(e, !matcher);
+    }
   }
 }
 
@@ -64,7 +76,10 @@ TEST_CASE("StartsWith Match")
     {
       CHECK_THROWS_MATCHES(throw e, cet::exception, matcher);
     }
-    SECTION("Not Thrown") { CHECK_THAT(e, matcher); }
+    SECTION("Not Thrown")
+    {
+      CHECK_THAT(e, matcher);
+    }
   }
   SECTION("Exception message does not match")
   {
@@ -73,7 +88,10 @@ TEST_CASE("StartsWith Match")
     {
       CHECK_THROWS_MATCHES(throw e, cet::exception, !matcher);
     }
-    SECTION("Not Thrown") { CHECK_THAT(e, !matcher); }
+    SECTION("Not Thrown")
+    {
+      CHECK_THAT(e, !matcher);
+    }
   }
 }
 
@@ -88,7 +106,10 @@ TEST_CASE("EndsWith Match")
     {
       CHECK_THROWS_MATCHES(throw e, cet::exception, matcher);
     }
-    SECTION("Not Thrown") { CHECK_THAT(e, matcher); }
+    SECTION("Not Thrown")
+    {
+      CHECK_THAT(e, matcher);
+    }
   }
   SECTION("Exception message does not match")
   {
@@ -97,7 +118,10 @@ TEST_CASE("EndsWith Match")
     {
       CHECK_THROWS_MATCHES(throw e, cet::exception, !matcher);
     }
-    SECTION("Not Thrown") { CHECK_THAT(e, !matcher); }
+    SECTION("Not Thrown")
+    {
+      CHECK_THAT(e, !matcher);
+    }
   }
 }
 
@@ -112,7 +136,10 @@ TEST_CASE("Regex Match")
     {
       CHECK_THROWS_MATCHES(throw e, cet::exception, matcher);
     }
-    SECTION("Not Thrown") { CHECK_THAT(e, matcher); }
+    SECTION("Not Thrown")
+    {
+      CHECK_THAT(e, matcher);
+    }
   }
   SECTION("Exception message does not match")
   {
@@ -121,14 +148,17 @@ TEST_CASE("Regex Match")
     {
       CHECK_THROWS_MATCHES(throw e, cet::exception, !matcher);
     }
-    SECTION("Not Thrown") { CHECK_THAT(e, !matcher); }
+    SECTION("Not Thrown")
+    {
+      CHECK_THAT(e, !matcher);
+    }
   }
 }
 
 TEST_CASE("Composed Matchers")
 {
-  exception_message_matcher xmatcher(Catch::Matchers::Contains("x")),
-    ymatcher(Catch::Matchers::Contains("y\n"));
+  exception_message_matcher xmatcher(Catch::Matchers::ContainsSubstring("x")),
+    ymatcher(Catch::Matchers::ContainsSubstring("y\n"));
   cet::exception e("junk");
   SECTION("Exception message matches")
   {
@@ -137,7 +167,10 @@ TEST_CASE("Composed Matchers")
     {
       CHECK_THROWS_MATCHES(throw e, cet::exception, xmatcher && ymatcher);
     }
-    SECTION("Not Thrown") { CHECK_THAT(e, xmatcher && ymatcher); }
+    SECTION("Not Thrown")
+    {
+      CHECK_THAT(e, xmatcher && ymatcher);
+    }
   }
   SECTION("Exception message does not match")
   {
@@ -146,6 +179,9 @@ TEST_CASE("Composed Matchers")
     {
       CHECK_THROWS_MATCHES(throw e, cet::exception, !(xmatcher && ymatcher));
     }
-    SECTION("Not Thrown") { CHECK_THAT(e, !(xmatcher && ymatcher)); }
+    SECTION("Not Thrown")
+    {
+      CHECK_THAT(e, !(xmatcher && ymatcher));
+    }
   }
 }

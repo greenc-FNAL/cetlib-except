@@ -13,7 +13,7 @@
 // such as cet::exception_category_matcher.
 ////////////////////////////////////////////////////////////////////////
 #include "cetlib_except/exception.h"
-#include <catch2/catch.hpp>
+#include <catch2/matchers/catch_matchers_string.hpp>
 
 #include <memory>
 #include <string>
@@ -23,40 +23,32 @@ namespace cet {
 }
 
 class cet::exception_message_matcher
-  : public Catch::MatcherBase<cet::exception> {
+  : public Catch::Matchers::MatcherBase<cet::exception> {
 public:
-  exception_message_matcher(
-    Catch::Matchers::StdString::EqualsMatcher const& matcher)
-    : matcher_{std::make_shared<Catch::Matchers::StdString::EqualsMatcher>(
-        matcher)}
+  exception_message_matcher(Catch::Matchers::StringEqualsMatcher const& matcher)
+    : matcher_{std::make_shared<Catch::Matchers::StringEqualsMatcher>(matcher)}
     , description_{matcher.describe()}
   {}
 
   exception_message_matcher(
-    Catch::Matchers::StdString::ContainsMatcher const& matcher)
-    : matcher_{std::make_shared<Catch::Matchers::StdString::ContainsMatcher>(
+    Catch::Matchers::StringContainsMatcher const& matcher)
+    : matcher_{std::make_shared<Catch::Matchers::StringContainsMatcher>(
         matcher)}
     , description_{matcher.describe()}
   {}
 
-  exception_message_matcher(
-    Catch::Matchers::StdString::StartsWithMatcher const& matcher)
-    : matcher_{std::make_shared<Catch::Matchers::StdString::StartsWithMatcher>(
-        matcher)}
+  exception_message_matcher(Catch::Matchers::StartsWithMatcher const& matcher)
+    : matcher_{std::make_shared<Catch::Matchers::StartsWithMatcher>(matcher)}
     , description_{matcher.describe()}
   {}
 
-  exception_message_matcher(
-    Catch::Matchers::StdString::EndsWithMatcher const& matcher)
-    : matcher_{std::make_shared<Catch::Matchers::StdString::EndsWithMatcher>(
-        matcher)}
+  exception_message_matcher(Catch::Matchers::EndsWithMatcher const& matcher)
+    : matcher_{std::make_shared<Catch::Matchers::EndsWithMatcher>(matcher)}
     , description_{matcher.describe()}
   {}
 
-  exception_message_matcher(
-    Catch::Matchers::StdString::RegexMatcher const& matcher)
-    : matcher_{std::make_shared<Catch::Matchers::StdString::RegexMatcher>(
-        matcher)}
+  exception_message_matcher(Catch::Matchers::RegexMatcher const& matcher)
+    : matcher_{std::make_shared<Catch::Matchers::RegexMatcher>(matcher)}
     , description_{matcher.describe()}
   {}
 
