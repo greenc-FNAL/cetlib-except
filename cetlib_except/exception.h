@@ -53,13 +53,13 @@
 //
 // ======================================================================
 
+#include "cetlib_except/cxx20_macros.h"
 #include <exception>
 #include <iosfwd>
 #include <list>
 #include <sstream>
 #include <string>
 #include <type_traits>
-#include "cetlib_except/cxx20_macros.h"
 #if CET_CONCEPTS_AVAILABLE
 #include <concepts>
 #endif
@@ -79,9 +79,7 @@ namespace cet::detail {
     std::is_base_of_v<cet::exception, std::remove_reference_t<T>>;
 
   template <typename T>
-  concept Streamable = requires (std::ostream os, T value) {
-    os << value;
-  };
+  concept Streamable = requires(std::ostream os, T value) { os << value; };
 #else
   template <
     class D,

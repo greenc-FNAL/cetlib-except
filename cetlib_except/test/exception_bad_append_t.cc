@@ -2,8 +2,7 @@
 using cet::exception;
 
 namespace {
-  struct UnStreamable {
-  };
+  struct UnStreamable {};
 }
 
 int
