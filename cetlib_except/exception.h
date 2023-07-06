@@ -54,13 +54,13 @@
 // ======================================================================
 
 #include "cetlib_except/cxx20_macros.h"
+#include <concepts>
 #include <exception>
 #include <iosfwd>
 #include <list>
 #include <sstream>
 #include <string>
 #include <type_traits>
-#include <concepts>
 
 namespace cet {
   class exception;
