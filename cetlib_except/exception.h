@@ -60,9 +60,7 @@
 #include <sstream>
 #include <string>
 #include <type_traits>
-#if CET_CONCEPTS_AVAILABLE
 #include <concepts>
-#endif
 
 namespace cet {
   class exception;
@@ -73,24 +71,12 @@ namespace cet {
 // ======================================================================
 
 namespace cet::detail {
-#if CET_CONCEPTS_AVAILABLE
-  template <typename T>
+  template <class T>
   concept cet_exception =
     std::is_base_of_v<cet::exception, std::remove_reference_t<T>>;
 
   template <typename T>
   concept Streamable = requires(std::ostream os, T value) { os << value; };
-#else
-  template <
-    class D,
-    bool = std::is_base_of<cet::exception, std::remove_reference_t<D>>::value>
-  struct enable_if_an_exception {
-    using type = D&&;
-  };
-
-  template <class D>
-  struct enable_if_an_exception<D, false> {};
-#endif
 } // cet::detail
 
 // ======================================================================
@@ -139,11 +125,7 @@ namespace cet {
     void append(std::ostream& f(std::ostream&));
     void append(std::ios_base& f(std::ios_base&));
 
-#if CET_CONCEPTS_AVAILABLE
     template <detail::Streamable T>
-#else
-    template <class T>
-#endif
     void
     append(T const& more_information)
     {
@@ -157,65 +139,40 @@ namespace cet {
 
   }; // exception
 
-#if CET_CONCEPTS_AVAILABLE
   template <detail::cet_exception E>
   E&&
-#else
-  template <class E>
-  typename detail::enable_if_an_exception<E>::type
-#endif
   operator<<(E&& e, std::string const& t)
   {
     e.append(t);
     return std::forward<E>(e);
   }
 
-#if CET_CONCEPTS_AVAILABLE
   template <detail::cet_exception E>
   E&&
-#else
-  template <class E>
-  typename detail::enable_if_an_exception<E>::type
-#endif
   operator<<(E&& e, char const t[])
   {
     e.append(t);
     return std::forward<E>(e);
   }
 
-#if CET_CONCEPTS_AVAILABLE
   template <detail::cet_exception E>
   E&&
-#else
-  template <class E>
-  typename detail::enable_if_an_exception<E>::type
-#endif
   operator<<(E&& e, std::ostream& f(std::ostream&))
   {
     e.append(f);
     return std::forward<E>(e);
   }
 
-#if CET_CONCEPTS_AVAILABLE
   template <detail::cet_exception E>
   E&&
-#else
-  template <class E>
-  typename detail::enable_if_an_exception<E>::type
-#endif
   operator<<(E&& e, std::ios_base& f(std::ios_base&))
   {
     e.append(f);
     return std::forward<E>(e);
   }
 
-#if CET_CONCEPTS_AVAILABLE
   template <detail::cet_exception E, class T>
   E&&
-#else
-  template <class E, class T>
-  typename detail::enable_if_an_exception<E>::type
-#endif
   operator<<(E&& e, T const& t)
   {
     e.append(t);
