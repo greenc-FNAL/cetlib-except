@@ -53,7 +53,6 @@
 //
 // ======================================================================
 
-#include "cetlib_except/cxx20_macros.h"
 #include <concepts>
 #include <exception>
 #include <iosfwd>
