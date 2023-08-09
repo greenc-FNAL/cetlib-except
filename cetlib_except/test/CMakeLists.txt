@@ -30,4 +30,4 @@ foreach(test IN LISTS catch2_tests)
     LIBRARIES PRIVATE cetlib_except::Catch2Matchers Catch2::Catch2)
 endforeach()
 
-cet_test(exception_bad_append_t COMPILE_ONLY TEST_PROPERTIES WILL_FAIL TRUE)
+cet_test(exception_bad_append_t USE_CATCH2_MAIN)
