@@ -75,7 +75,8 @@ namespace cet::detail {
     std::is_base_of_v<cet::exception, std::remove_reference_t<T>>;
 
   template <typename T>
-  concept Streamable = requires(std::ostream os, T value) { os << value; };
+  concept Streamable =
+    requires(std::ostream& os, T const& value) { os << value; };
 } // cet::detail
 
 // ======================================================================
